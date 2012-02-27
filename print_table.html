@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+
+  <body>
+    <table id="tbl1">
+      <thead>
+	<tr><th>term</th><th>value</th></tr>
+      </thead>
+      <tbody>
+	<tr><td>where</td><td>data?</td></tr>
+      </tbody>
+    </table>
+
+  <script>
+    var sample = {"kant": [{"hume": 0.91794278932365247}, {"leibniz": 0.88537851050795435}, {"herder": 0.8753212567380434}, {"aristotle": 0.87024416994341403}, {"spinoza": 0.85926509164300868}, {"locke": 0.85888683236409924}, {"hegel": 0.85849343284862778}, {"wolff": 0.85748667120495348}, {"bradley": 0.84722366230370616}, {"strawson": 0.84458059258174023}, {"reid": 0.84188141318227327}, {"cohen": 0.83685662225276858}, {"mill": 0.83652194554221815}, {"maimon": 0.83544172029147257}, {"newton": 0.8344075826950208}, {"quine": 0.83245172505995968}, {"plato": 0.832291917065342}, {"frege": 0.83002595290102388}, {"views": 0.82937957386278915}, {"fichte": 0.82539844268173246}]};
+
+    function print_table(data, key) {
+       $("#tbl1 tbody").html("<tr><td>"+key+"</td><td>1.000000</td></tr>");
+       for (var i in data[key]) {
+          var term = Object.keys(data[key][i])[0];
+          var value = data[key][i][term];
+          var row = "<tr><td>"+term+"</td><td>"+value+"</td></tr>";
+          $("#tbl1 tbody").append(row);
+       }
+    }
+
+    print_table(sample, 'kant');
+    
+
+  </script>
+  </body>
+</html>
